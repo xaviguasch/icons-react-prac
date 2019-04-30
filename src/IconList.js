@@ -18,15 +18,17 @@ class IconList extends Component {
       'couch'
     ]
   }
+
   constructor(props) {
     super(props)
-    this.state = { icons: [] }
+    this.state = { icons: ['bone', 'cloud'] }
     this.addIcon = this.addIcon.bind(this)
   }
 
   addIcon() {
     let idx = Math.floor(Math.random() * this.props.options.length)
     let newIcon = this.props.options[idx]
+    this.setState({ icons: [...this.state.icons, newIcon] })
   }
 
   render() {
